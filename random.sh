@@ -2,14 +2,14 @@
 RandomNumber() {
   typeset -r floor=$1
   typeset -r range=$2
-  typeset -i number=0   #initialize
+  typeset -i number=0
   while [ "$number" -le $floor ]
   do
     number=$RANDOM
-    let "number %= $range"  # Scales $number down within $RANGE.
+    # Scales $number down within $range.
+    let "number %= $range"
   done
-  #echo "Random number between $floor and $range ---  $number"
-echo $number
+  echo $number
 }
 
 Main() {
@@ -21,9 +21,11 @@ Main() {
    typeset -r MIN=$1
    typeset -r RANGE=$(($2 - $1))
    typeset -r SLEEP=$3
+   typeset -r SOURCE=$(hostname)
    while :
    do
-      RandomNumber "$MIN" "$RANGE"
+      value=$(RandomNumber "$MIN" "$RANGE")
+      echo "DEMO_METRIC: $value $SOURCE"
       sleep $SLEEP
    done
 }
