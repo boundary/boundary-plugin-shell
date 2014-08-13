@@ -1,6 +1,6 @@
 {
     "description" : "Provides per core CPU utilization",
 	"command" : "bash random.sh 0 99 $(pollInterval)",
-	"metrics" : ["SINE_WAVE"]
+	"metrics" : ["DEMO_METRIC"]
 }
 
