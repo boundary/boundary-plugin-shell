@@ -22,12 +22,12 @@ Main() {
    typeset -r RANGE=$(($2 - $1))
    typeset -r SLEEP=$(($3 / 1000))
    typeset -r SOURCE=$(hostname)
-   while :
-   do
+#   while :
+#   do
       value=$(RandomNumber "$MIN" "$RANGE")
       echo "DEMO_METRIC: $value $SOURCE"
-      sleep $SLEEP
-   done
+#      sleep $SLEEP
+#   done
 }
 
 Main $*
