@@ -20,7 +20,7 @@ Main() {
    fi
    typeset -r MIN=$1
    typeset -r RANGE=$(($2 - $1))
-   typeset -r SLEEP=$3
+   typeset -r SLEEP=$(($3 / 1000))
    typeset -r SOURCE=$(hostname)
    while :
    do
