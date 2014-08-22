@@ -1,6 +1,37 @@
 {
-    "description" : "Provides per core CPU utilization",
-	"command" : "bash random.sh 0 99 $(pollInterval)",
-	"metrics" : ["DEMO_METRIC"]
+    "description": "Provides a generic means to generate metrics via a command, or other scripting language",
+    "command": "bash random.sh 0 99 $(pollInterval)",
+    "paramArray": {
+        "itemTitle": [
+            "name"
+        ],
+        "schemaTitle": "Metric Command"
+    },
+    "paramSchema": [
+        {
+            "title": "Name",
+            "name": "name",
+            "description": "Name of this metric configuration",
+            "type": "string",
+            "default": "",
+            "required": true
+        },
+        {
+            "title": "Poll Time (sec)",
+            "name": "pollInterval",
+            "description": "The Poll Interval to call the Nagios plugin. Defaults 5 seconds",
+            "type": "string",
+            "default": 5,
+            "required": false
+        },
+        {
+            "title": "Command",
+            "name": "command",
+            "description": "Command or script to call to provide the metric",
+            "type": "string",
+            "default": 5,
+            "required": false
+        }
+    ]
 }
 
