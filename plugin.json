@@ -1,6 +1,6 @@
 {
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
-    "command": "bash random.sh 0 99 $(pollInterval)",
+    "command": "bash launch.sh 10",
     "metrics" : ["CPU"],
     "paramArray": { "itemTitle": [ "name" ], "schemaTitle": "Metric Command" },
     "paramSchema": [
