@@ -1,7 +1,7 @@
 {
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
     "command": "python index.py",
-    "metrics" : ["CPU"],
+    "metrics" : ["PROC_MEM"],
     "paramArray": { "itemTitle": [ "name" ], "schemaTitle": "Metric Command" },
     "paramSchema": [
         {
