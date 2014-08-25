@@ -25,7 +25,7 @@
             "name": "command",
             "description": "Command or script to call to provide the metric",
             "type": "string",
-            "default": 5,
+            "default": "",
             "required": false
         }
     ]

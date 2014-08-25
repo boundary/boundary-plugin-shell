@@ -13,26 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import thread
-from time import sleep
-import platform
-import random
+
+from configuration import Configuration
+from dispatcher import Dispatcher
 
 class Plugin:
     
     def __init__(self):
-        pass
+        self.config = Configuration("param.json")
+        self.dispatcher = Dispatcher()
         
     def initialize(self):
-        pass
+        self.config.load()
     
-    def printMetric(self,metric):
-        print(metric + " " + str(random.randrange(0,99)) + " " + platform.node())
-        
     def run(self):
-        while True:
-            self.printMetric("LOAD_1_MINUTE")
-            self.printMetric("LOAD_5_MINUTE")
-            self.printMetric("LOAD_15_MINUTE")
-            sleep(5)
+        self.dispatcher.run()
             
