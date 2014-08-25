@@ -31,6 +31,7 @@ class Dispatcher:
         print(metric + " " + str(random.randrange(0,99)) + " " + platform.node())
         
     def run(self):
-        self.printMetric("LOAD_1_MINUTE")
-        self.printMetric("LOAD_5_MINUTE")
-        self.printMetric("LOAD_15_MINUTE")
+        while True:
+            self.printMetric("LOAD_1_MINUTE")
+            self.printMetric("LOAD_5_MINUTE")
+            self.printMetric("LOAD_15_MINUTE")
