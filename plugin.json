@@ -1,7 +1,7 @@
 {
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
-    "command": "python index.py $(pollInterval)",
-    "metrics" : ["CPU_CORE"],
+    "command": "python index.py",
+    "metrics" : ["SHELL_METRIC"],
     "paramArray": { "itemTitle": [ "name" ], "schemaTitle": "Metric Command" },
     "paramSchema": [
         {

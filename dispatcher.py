@@ -35,4 +35,4 @@ class Dispatcher:
             self.printMetric("LOAD_1_MINUTE")
             self.printMetric("LOAD_5_MINUTE")
             self.printMetric("LOAD_15_MINUTE")
-            sleep(5)
+            sleep(1)
