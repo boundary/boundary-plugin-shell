@@ -39,7 +39,7 @@ class TestMetric(unittest.TestCase):
         metric.setValue(100)
         metric.setSource("snafu")
         print(str(self))
-        self.assertEqual(str(metric), "name: bar, value: 100, source: snafu", "String does not match")
+        self.assertEqual(str(metric), "bar 100 snafu", "String does not match")
 
 if __name__ == '__main__':
     unittest.main()
