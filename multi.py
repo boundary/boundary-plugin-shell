@@ -4,6 +4,14 @@ import sys
 import time
 from multiprocessing import Pool, Lock
 
+import signal
+
+maxParallelism = 20
+
+parallelismPool = Pool(processes=maxParallelism)
+
+
+
 lock = Lock()
 
 def output(msg):
@@ -16,10 +24,10 @@ def func(input):
     	output(u'pid:%d got input \"%s\"' % (os.getpid(), str(input)))
         time.sleep(float(input)  + 10.0)
 
-def executeFunctionInParallel(funcName, inputsList, maxParallelism):
+def executeFunctionInParallel(funcName, inputsList):
     output(u'Executing function %s on input of size %d with maximum parallelism of %d' % (
       funcName.__name__, len(inputsList), maxParallelism))
-    parallelismPool = Pool(processes=maxParallelism)
+    
     executeBooleanResultsList = parallelismPool.map(funcName, inputsList)
     parallelismPool.close()
     output(u'Function %s executed on input of size %d  with maximum parallelism of %d' % (
@@ -29,4 +37,4 @@ def executeFunctionInParallel(funcName, inputsList, maxParallelism):
 
 if __name__ == "__main__":
     inputsList=[str(i) for i in range(20)]
-    executeFunctionInParallel(func, inputsList, 20)
+    executeFunctionInParallel(func, inputsList)
