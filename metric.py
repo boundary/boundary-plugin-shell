@@ -13,26 +13,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import thread
-from time import sleep
-import platform
-import random
-
-class Plugin:
+class Metric:
     
     def __init__(self):
         pass
+
+    def setSource(self,source):
+        self.source = source
         
-    def initialize(self):
-        pass
+    def getSource(self):
+        return self.source
+
+    def setName(self, name):
+        self.name = name
+        
+    def getName(self):
+        return self.name
     
-    def printMetric(self,metric):
-        print(metric + " " + str(random.randrange(0,99)) + " " + platform.node())
+    def setValue(self, value):
+        self.value = value
         
-    def run(self):
-        while True:
-            self.printMetric("LOAD_1_MINUTE")
-            self.printMetric("LOAD_5_MINUTE")
-            self.printMetric("LOAD_15_MINUTE")
-            sleep(5)
-            
+    def getValue(self):
+        return self.value
+
+    def __str__(self):
+        return "{} {} {}".format(self.name,self.value,self.source)
