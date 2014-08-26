@@ -1,2 +1,2 @@
-graphdat-plugin-run-script
-==========================
+boundary-plugin-shell
+=====================
