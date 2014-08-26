@@ -14,52 +14,21 @@
 # limitations under the License.
 
 import subprocess
-
-
+import shlex
 
 class ExecProc:
     
     def __init__(self):
         self.args = None
-        self.path = None
-    
-    def setPath(self,path):
-        if type(path) != str:
-            raise ValueError
-        self.path = path
         
     def setArgs(self,args):
-        if type(args) != list:
+        if type(args) != str:
             raise ValueError
         self.args = args
         
     def execute(self):
-        if self.path == None:
+        if self.args == None:
             raise ValueError
-        command = [self.path]
-        if self.args != None:
-            command = command + self.args
-        output = subprocess.check_output(command)
+        args = shlex.split(self.args)
+        output = subprocess.check_output(args)
         return output
-        
-
-# function ExecProc:execute()
-#   if self.path == nil then error("path has not been set",2) end
-#   local command = self:getCommand()
-#   local file = assert(io.popen(command, 'r'))
-#   self.output = file:read('*all')
-#   file:close()
-# end
-
-# function ExecProc:getCommand()
-#   if type(self.path) == nil then error("path has not been set",2) end
-#   local command = self.path
-#   if (self.args)
-#   then
-#     for i,j in pairs(self.args)
-#     do
-#       command = command.." "..j
-#     end
-#   end
-#   return command
-# end

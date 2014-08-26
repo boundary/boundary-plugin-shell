@@ -50,8 +50,8 @@ class TestMetricItem(unittest.TestCase):
         
     def testCommand(self):
         m = MetricItem()
-        m.setCommand(["snafu"])
-        self.assertEquals(m.getCommand(),["snafu"],"Commands not equal")
+        m.setCommand("snafu")
+        self.assertEquals(m.getCommand(),"snafu","Commands not equal")
 
 if __name__ == '__main__':
     unittest.main()

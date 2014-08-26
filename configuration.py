@@ -42,7 +42,7 @@ class Configuration:
             item = MetricItem()
             item.setName(str(i["name"]))
             item.setPollingInterval(int(i["pollInterval"]))
-            item.setCommand(i["command"].split())
+            item.setCommand(str(i["command"]))
             self.config.append(item)
         
     def __str__(self):

@@ -37,7 +37,7 @@ class MetricItem:
         return self.pollInterval
         
     def setCommand(self, command):
-        if type(command) != list:
+        if type(command) != str:
             raise ValueError
         self.command = command
         

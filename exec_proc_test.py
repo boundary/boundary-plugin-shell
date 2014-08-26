@@ -30,7 +30,7 @@ class TestExecProc(unittest.TestCase):
         
     def testMissingArgs(self):
         e = ExecProc()
-        e.setPath("ls")
+        e.setArgs("ls")
         output = e.execute()
         self.assertTrue(len(output) > 0,"Output is empty")
         
@@ -49,18 +49,10 @@ class TestExecProc(unittest.TestCase):
         except ValueError as v:
             self.assertEqual(type(v),ValueError)
             
-    def testPathType(self):
-        try:
-            e = ExecProc()
-            e.setPath(10)
-        except ValueError as v:
-            self.assertEqual(type(v),ValueError)
-
     def testExec(self):
         e = ExecProc()
-        args = ["-l","src/test/resources/test-exec"]
-        e.setArgs(args)
-        e.setPath("ls")
+
+        e.setArgs("ls -l src/test/resources/test-exec")
         output = e.execute()
         self.assertEquals(output,"total 0\n-rw-r--r--  1 davidg  staff  0 Aug 25 12:20 goodbye.txt\n-rw-r--r--  1 davidg  staff  0 Aug 25 12:20 hello.txt\n-rw-r--r--  1 davidg  staff  0 Aug 25 12:20 myDir\n")
 
