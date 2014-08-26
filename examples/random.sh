@@ -13,16 +13,17 @@ RandomNumber() {
 }
 
 Main() {
-   if [ $# -ne 2 ]
+   if [ $# -ne 3 ]
    then
      echo "usage: $(basename $0) <min> <max>" 
      exit 1
    fi
-   typeset -r MIN=$1
-   typeset -r RANGE=$(($2 - $1))
+   typeset -r NAME=$1
+   typeset -r MIN=$2
+   typeset -r RANGE=$(($3 - $2))
    typeset -r SOURCE=$(hostname)
    value=$(RandomNumber "$MIN" "$RANGE")
-   echo "SHELL_METRIC $value $SOURCE"
+   echo "$NAME $value $SOURCE"
 }
 
 Main $*
