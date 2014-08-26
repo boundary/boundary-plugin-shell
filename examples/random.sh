@@ -13,21 +13,16 @@ RandomNumber() {
 }
 
 Main() {
-   if [ $# -ne 3 ]
+   if [ $# -ne 2 ]
    then
-     echo "usage: $(basename $0) <min> <max> <interval>"
+     echo "usage: $(basename $0) <min> <max>" 
      exit 1
    fi
    typeset -r MIN=$1
    typeset -r RANGE=$(($2 - $1))
-   typeset -r SLEEP=$(($3 / 1000))
    typeset -r SOURCE=$(hostname)
-   while :
-   do
-      value=$(RandomNumber "$MIN" "$RANGE")
-      echo "SHELL_METRIC" $value $SOURCE"
-      sleep $SLEEP
-   done
+   value=$(RandomNumber "$MIN" "$RANGE")
+   echo "SHELL_METRIC $value $SOURCE"
 }
 
 Main $*
