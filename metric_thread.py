@@ -17,6 +17,7 @@ from threading import Thread, Lock
 import time
 from metric_item import MetricItem
 from exec_proc import ExecProc
+from sys import stdout
 
 stdoutmutex = Lock()
 
@@ -36,6 +37,7 @@ class MetricThread(Thread):
             output = self.proc.execute()
             with self.mutex:
                 print(self.name + ": " + output)
+                stdout.flush()
             time.sleep(self.pollingInterval)
 
         
