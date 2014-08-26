@@ -15,7 +15,11 @@
 
 import json
 from pprint import pprint
-import StringIO
+try:
+    import StringIO
+except ImportError:
+    from io import StringIO
+
 from metric_item import MetricItem
 
 class Configuration:
