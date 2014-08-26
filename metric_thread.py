@@ -30,13 +30,12 @@ class MetricThread(Thread):
         self.name = item.getName()
         self.proc = ExecProc()
         self.proc.setArgs(item.getCommand())
-
         
     def run(self): # run provides thread logic
         while True:
             output = self.proc.execute()
             with self.mutex:
-                print(self.name + ": " + output)
+                stdout.write(output)
                 stdout.flush()
             time.sleep(self.pollingInterval)
 

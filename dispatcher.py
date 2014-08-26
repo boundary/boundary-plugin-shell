@@ -43,7 +43,7 @@ class Dispatcher:
         threads = []
         items = self.config.getItems()
         for i in items:
-            print(i.getName())
+#           print(i.getName())
             thread = MetricThread(i,stdoutmutex) # make/ start 10 threads
             thread.start() # starts run method in a thread
             threads.append(thread)

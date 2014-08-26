@@ -19,8 +19,8 @@ from dispatcher import Dispatcher
 
 class Plugin:
     
-    def __init__(self):
-        self.config = Configuration("param.json")
+    def __init__(self,path):
+        self.config = Configuration(path)
         self.dispatcher = Dispatcher()
         
     def initialize(self):

@@ -10,6 +10,12 @@
          "pollInterval": "20",
          "command": "echo $PATH"
       }
+      ,
+      {
+         "name": "Random",
+         "pollInterval": "10",
+         "command": "examples/random.sh 0 99"
+      }
    ],
    "pollInterval": 1000
 }
