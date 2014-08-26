@@ -1,6 +1,6 @@
 {
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
-    "command": "python index.py",
+    "command": "python simple.py",
     "metrics" : ["SHELL_METRIC"],
     "paramArray": { "itemTitle": [ "name" ], "schemaTitle": "Metric Command" },
     "paramSchema": [
