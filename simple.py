@@ -14,8 +14,14 @@
 # limitations under the License.
 import platform
 import random
+import sys
 from time import sleep
+import logging
+logging.basicConfig(filename='simple.log',format='%(asctime)s %(message)s',level=logging.DEBUG)
 
 while True:
-    print("SHELL_METRIC" + " " + str(random.randrange(0,99)) + " " + platform.node())
+    s = "SHELL_METRIC" + " " + str(random.randrange(0,99)) + " " + platform.node()
+    print(s)
+    sys.stdout.flush()
+    logging.debug(s)
     sleep(1)
