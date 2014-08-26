@@ -1,4 +1,5 @@
 #!/bin/bash
+
 RandomNumber() {
   typeset -r floor=$1
   typeset -r range=$2
