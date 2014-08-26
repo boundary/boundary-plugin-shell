@@ -16,7 +16,7 @@ RandomNumber() {
 Main() {
    if [ $# -ne 3 ]
    then
-     echo "usage: $(basename $0) <min> <max>" 
+     echo "usage: $(basename $0) <metric> <min> <max>" 
      exit 1
    fi
    typeset -r NAME=$1
