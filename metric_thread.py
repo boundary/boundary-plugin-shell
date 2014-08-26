@@ -38,6 +38,3 @@ class MetricThread(Thread):
                 stdout.write(output)
                 stdout.flush()
             time.sleep(self.pollingInterval)
-
-        
-    
