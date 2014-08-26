@@ -25,7 +25,7 @@ Main() {
    while :
    do
       value=$(RandomNumber "$MIN" "$RANGE")
-      echo "DEMO_METRIC $value $SOURCE"
+      echo "SHELL_METRIC" $value $SOURCE"
       sleep $SLEEP
    done
 }
