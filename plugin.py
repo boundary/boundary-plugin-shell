@@ -25,6 +25,7 @@ class Plugin:
         
     def initialize(self):
         self.config.load()
+        self.dispatcher.setConfig(self.config)
     
     def run(self):
         self.dispatcher.run()

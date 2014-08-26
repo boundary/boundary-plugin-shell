@@ -8,4 +8,4 @@ def main():
     plugin.run()
     
 if __name__ == "__main__":
-    main()
+    main() 

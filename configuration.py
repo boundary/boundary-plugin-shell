@@ -16,6 +16,7 @@
 import json
 from pprint import pprint
 import StringIO
+from metric_item import MetricItem
 
 class Configuration:
     
@@ -23,18 +24,32 @@ class Configuration:
         self.config = []
         self.path = path
     
-    def getConfig(self):
-        return self.data
-    
     def setPath(self, path):
         self.path = path
+        
+    def getEntryCount(self):
+        count = 0
+        if self.data != None:
+            count = len(self.data["items"])
+        return count
     
     def load(self):
         self.json_data = open(self.path)
         self.data = json.load(self.json_data)
+        # Loop over the items and put into list
+        metricItems = self.data["items"]
+        for i in metricItems:
+            item = MetricItem()
+            item.setName(str(i["name"]))
+            item.setPollingInterval(int(i["pollInterval"]))
+            item.setCommand(i["command"].split())
+            self.config.append(item)
         
     def __str__(self):
         output = StringIO.StringIO()
         pprint(self.data,stream=output)
         return output.getvalue()
+    
+    def getItems(self):
+        return self.config
 

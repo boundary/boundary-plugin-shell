@@ -26,19 +26,28 @@ class TestConfiguration(unittest.TestCase):
 
     def testConstructor(self):
         c = Configuration("src/test/resources/test_param.json")
+        
+    def testEntryCount(self):
+        c = Configuration("src/test/resources/test_param.json")
+        c.load()
+        self.assertEquals(c.getEntryCount(),2,"Entry count does not match")
+
 
     def testItems(self):
         c = Configuration("src/test/resources/test_param.json")
         c.load()
-        o = c.getConfig()
-        self.assertEqual(len(o["items"]),2)
-        l = o["items"]
-        self.assertEquals(l[0]["name"],"Echo foo")
-        self.assertEquals(int(l[0]["pollInterval"]),5)
-        self.assertEquals(l[0]["command"],"echo $HOME")
-        self.assertEquals(l[1]["name"],"Echo bar")
-        self.assertEquals(int(l[1]["pollInterval"]),20)
-        self.assertEquals(l[1]["command"],"echo $PATH")
+        config = c.getItems()
+        self.assertEqual(len(config),2)
+        self.assertEquals(config[0].getName(),"Echo foo")
+        self.assertEquals(config[0].getPollInterval(),5)
+        self.assertEquals(config[0].getCommand(),["echo","$HOME"])
+        self.assertEquals(config[1].getName(),"Echo bar")
+        self.assertEquals(config[1].getPollInterval(),20)
+        self.assertEquals(config[1].getCommand(),["echo","$PATH"])
         
+    def testEmptyItems(self):
+        c = Configuration("src/test/resources/test_param.json")
+        self.assertEquals(len(c.getItems()),0,"Items not equal to zero")
+
 if __name__ == '__main__':
     unittest.main()
