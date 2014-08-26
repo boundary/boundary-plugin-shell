@@ -14,7 +14,6 @@
 # limitations under the License.
 
 import random
-import thread
 from time import sleep
 import platform
 from sys import stdout
