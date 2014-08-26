@@ -28,3 +28,4 @@ Main() {
 }
 
 Main $*
+exit 0
