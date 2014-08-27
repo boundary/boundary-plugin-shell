@@ -14,17 +14,20 @@ RandomNumber() {
 }
 
 Main() {
-   if [ $# -ne 3 ]
+   if [ $# -ne 2 ]
    then
-     echo "usage: $(basename $0) <metric> <min> <max>" 
+     echo "usage: $(basename $0) <min> <max>" 
+     echo ""
+     echo "where:"
+     echo "  min is the smallest value to generate"
+     echo "  max is the largest value to generate"
      exit 1
    fi
-   typeset -r NAME=$1
-   typeset -r MIN=$2
-   typeset -r RANGE=$(($3 - $2))
+   typeset -r MIN=$1
+   typeset -r RANGE=$(($2 - $1))
    typeset -r SOURCE=$(hostname)
    value=$(RandomNumber "$MIN" "$RANGE")
-   echo "$NAME $value $SOURCE"
+   echo "RANDOM_NUMBER $value $SOURCE"
 }
 
 Main $*

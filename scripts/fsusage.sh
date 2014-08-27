@@ -4,7 +4,7 @@
 #/dev/disk0s2    487712924 311747048 175709876    64%    /
 
 usage() {
-  echo "useage: $(basename $0) <metric> <mount point>"
+  echo "useage: $(basename $0) <mount point>"
 }
 
 OutputMetric() {
@@ -17,13 +17,13 @@ OutputMetric() {
 
 
 Main() {
-  if [ $# -ne 2 ]
+  if [ $# -ne 1 ]
   then
     usage
     exit 1
   fi
-  typeset -r metric=$1
-  typeset -r mount_point=$2
+  typeset -r metric="FILE_SPACE_USED"
+  typeset -r mount_point=$1
   typeset -r source=$(hostname)
 
   used=$(df -kP $mount_point | tail -1 | awk '{print $3}')
