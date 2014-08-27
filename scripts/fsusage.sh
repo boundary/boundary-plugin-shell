@@ -36,7 +36,7 @@ Main() {
   typeset -r source=$(hostname)
 
   used=$(df -kP $mount_point | tail -1 | awk '{print $5}' | tr -d '%')
-#  used=$(($used / 1024))
+  used=$(python -c "print(str($used/100.0))")
 
   OutputMetric $metric $used $source
 }
