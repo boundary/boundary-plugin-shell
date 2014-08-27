@@ -1,3 +1,4 @@
 #!/bin/bash
 
-chmod +x scripts/random.sh
+echo "Set execute flag on scripts" >&2
+chmod +x scripts/*.sh
