@@ -2,6 +2,7 @@
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
     "command": "python index.py",
     "metrics" : ["SHELL_METRIC"],
+    "postExtract" : "bash src/main/scripts/postinstall.sh"
     "paramArray": { "itemTitle": [ "name" ], "schemaTitle": "Metric Command" },
     "paramSchema": [
         {
