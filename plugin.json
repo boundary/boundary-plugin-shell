@@ -30,7 +30,7 @@
             "name": "debug",
             "description": "Turns on the debugging of the execution of the command",
             "type": "boolean",
-            "default": "false",
+            "default": false,
             "required": false
 	},
         {
