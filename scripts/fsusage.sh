@@ -31,12 +31,12 @@ Main() {
     usage
     exit 1
   fi
-  typeset -r metric="FILE_SPACE_USED"
+  typeset -r metric="FILE_SPACE_CAPACITY"
   typeset -r mount_point=$1
   typeset -r source=$(hostname)
 
-  used=$(df -kP $mount_point | tail -1 | awk '{print $3}')
-  used=$(($used / 1024))
+  used=$(df -kP $mount_point | tail -1 | awk '{print $5}' | tr -d '%')
+#  used=$(($used / 1024))
 
   OutputMetric $metric $used $source
 }
