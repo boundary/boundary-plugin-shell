@@ -47,7 +47,6 @@ class Dispatcher:
             thread = MetricThread(i,stdoutmutex) # make/ start 10 threads
             thread.start() # starts run method in a thread
             threads.append(thread)
-        logging.info("Running...")
         for thread in threads:
             thread.join() # wait for thread exits
             

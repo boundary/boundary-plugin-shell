@@ -28,11 +28,9 @@ class Plugin:
         self.dispatcher = Dispatcher()
         
     def initialize(self):
-        logging.info("Initializing...")
         self.config.load()
         self.dispatcher.setConfig(self.config)
     
     def run(self):
-        logging.info("Starting...")
         self.dispatcher.run()
             
