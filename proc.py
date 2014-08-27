@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
-from multiprocessing import Process
+from subprocess import Popen,PIPE
+import shlex
+from sys import stdout
 
-def f(name):
-    print 'hello', name
+command = "ls -l src/test/resources/test-exec"
+args = shlex.split(command)
 
-if __name__ == '__main__':
-    p = Process(target=f, args=('bob',))
-    p.start()
-    p.join()
+p = Popen(args,stdout=PIPE)
+
+s,e = p.communicate()
+stdout.write(s)

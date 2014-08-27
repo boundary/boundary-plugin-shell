@@ -3,23 +3,23 @@
       {
          "name": "Echo foo",
          "pollInterval": "5",
-         "command": "examples/random.sh LOAD_1_MINUTE 0 99"
+         "command": "scripts/random.sh 0 99"
       },
       {
          "name": "Echo bar",
          "pollInterval": "5",
-         "command": "examples/random.sh LOAD_5_MINUTE 0 99"
+         "command": "scripts/random.sh 0 99"
       },
       {
          "name": "Echo bar",
          "pollInterval": "5",
-         "command": "examples/random.sh LOAD_15_MINUTE 0 99"
+         "command": "scripts/random.sh 0 99"
       }
       ,
       {
          "name": "Random",
          "pollInterval": "10",
-         "command": "examples/random.sh SHELL_METRIC 0 99"
+         "command": "scripts/random.sh 0 99"
       }
    ],
    "pollInterval": 1000

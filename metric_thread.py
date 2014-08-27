@@ -29,7 +29,7 @@ class MetricThread(Thread):
         self.pollingInterval = item.getPollingInterval()
         self.name = item.getName()
         self.proc = ExecProc()
-        self.proc.setArgs(item.getCommand())
+        self.proc.setCommand(item.getCommand())
         
     def run(self): # run provides thread logic
         while True:

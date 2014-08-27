@@ -13,22 +13,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import subprocess
+from subprocess import Popen,PIPE
 import shlex
 
 class ExecProc:
     
     def __init__(self):
-        self.args = None
+        self.command = None
         
-    def setArgs(self,args):
-        if type(args) != str:
+        
+    def setCommand(self,command):
+        if type(command) != str:
             raise ValueError
-        self.args = args
+        self.command = command
         
     def execute(self):
-        if self.args == None:
+        if self.command == None:
             raise ValueError
-        args = shlex.split(self.args)
-        output = subprocess.check_output(args)
-        return output
+        args = shlex.split(self.command)
+        p = Popen(args,stdout=PIPE)
+        o,e = p.communicate()
+        return o

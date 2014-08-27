@@ -28,16 +28,17 @@ class TestExecProc(unittest.TestCase):
         e = ExecProc()
         self.assertTrue(e != None,"Instance is None")
         
-    def testMissingArgs(self):
-        e = ExecProc()
-        e.setArgs("ls")
-        output = e.execute()
-        self.assertTrue(len(output) > 0,"Output is empty")
+    def testMissingCommand(self):
+        try:
+            e = ExecProc()
+            output = e.execute()
+        except ValueError as v:
+            self.assertEqual(type(v),ValueError)
         
     def testMissingPath(self):
         try:
             e = ExecProc()
-            e.setArgs(["-l"])
+            e.setCommand(["-l"])
             output = e.execute()
         except ValueError as v:
             self.assertEqual(type(v),ValueError)
@@ -45,14 +46,13 @@ class TestExecProc(unittest.TestCase):
     def testArgsType(self):
         try:
             e = ExecProc()
-            e.setArgs("-l")
+            e.setCommand("-l")
         except ValueError as v:
             self.assertEqual(type(v),ValueError)
             
     def testExec(self):
         e = ExecProc()
-
-        e.setArgs("ls -l src/test/resources/test-exec")
+        e.setCommand("ls -l src/test/resources/test-exec")
         output = e.execute()
         self.assertEquals(output,"total 0\n-rw-r--r--  1 davidg  staff  0 Aug 25 12:20 goodbye.txt\n-rw-r--r--  1 davidg  staff  0 Aug 25 12:20 hello.txt\n-rw-r--r--  1 davidg  staff  0 Aug 25 12:20 myDir\n")
 
