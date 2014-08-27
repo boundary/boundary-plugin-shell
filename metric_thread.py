@@ -24,12 +24,13 @@ stdoutmutex = Lock()
 class MetricThread(Thread):
     
     def __init__(self,item,mutex):
-        Thread.__init__(self)
+        Thread.__init__(self,name=item.getName())
         self.mutex = mutex
         self.pollingInterval = item.getPollingInterval()
         self.name = item.getName()
         self.proc = ExecProc()
         self.proc.setCommand(item.getCommand())
+        self.proc.setDebug(item.getDebug())
         
     def run(self): # run provides thread logic
         while True:

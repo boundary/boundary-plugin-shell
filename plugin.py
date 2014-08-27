@@ -16,6 +16,10 @@
 
 from configuration import Configuration
 from dispatcher import Dispatcher
+import logging
+import sys
+
+logging.basicConfig(stream=sys.stderr,format='thread: %(threadName)s, file: %(filename)s, msg: %(message)s',level=logging.DEBUG)
 
 class Plugin:
     
@@ -24,9 +28,11 @@ class Plugin:
         self.dispatcher = Dispatcher()
         
     def initialize(self):
+        logging.info("Initializing...")
         self.config.load()
         self.dispatcher.setConfig(self.config)
     
     def run(self):
+        logging.info("Starting...")
         self.dispatcher.run()
             

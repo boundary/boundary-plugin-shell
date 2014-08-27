@@ -48,6 +48,11 @@ class TestMetricItem(unittest.TestCase):
         m.setPollingInterval(1000)
         self.assertTrue(type(m.getPollingInterval()) == int)
         
+    def testPollInterval(self):
+        m = MetricItem();
+        m.setDebug(True)
+        self.assertEquals(m.getDebug(),True,"Debug not equal")
+        
     def testCommand(self):
         m = MetricItem()
         m.setCommand("snafu")

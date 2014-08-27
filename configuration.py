@@ -47,6 +47,7 @@ class Configuration:
             item.setName(str(i["name"]))
             item.setPollingInterval(int(i["pollInterval"]))
             item.setCommand(str(i["command"]))
+            item.setDebug(bool(i["debug"]))
             self.config.append(item)
         
     def __str__(self):

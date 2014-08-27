@@ -15,12 +15,18 @@
 
 from subprocess import Popen,PIPE
 import shlex
+import logging
+
+
 
 class ExecProc:
     
     def __init__(self):
         self.command = None
+        self.debug = False
         
+    def setDebug(self,debug):
+        self.debug = debug
         
     def setCommand(self,command):
         if type(command) != str:
@@ -31,6 +37,10 @@ class ExecProc:
         if self.command == None:
             raise ValueError
         args = shlex.split(self.command)
+        if self.debug == True:
+            logging.info("command=\"%s\"",self.command)
         p = Popen(args,stdout=PIPE)
         o,e = p.communicate()
+        if self.debug == True:
+            logging.info("output=\"%s\"",o)
         return o

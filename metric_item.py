@@ -35,6 +35,14 @@ class MetricItem:
         
     def getPollingInterval(self):
         return self.pollInterval
+    
+    def setDebug(self,debug):
+        if type(debug) != bool:
+            raise ValueError
+        self.debug = debug
+        
+    def getDebug(self):
+        return self.debug
         
     def setCommand(self, command):
         if type(command) != str:
