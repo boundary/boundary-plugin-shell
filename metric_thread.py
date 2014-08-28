@@ -25,6 +25,7 @@ class MetricThread(Thread):
     
     def __init__(self,item,mutex):
         Thread.__init__(self,name=item.getName())
+        self.setDaemon(True)
         self.mutex = mutex
         self.pollingInterval = item.getPollingInterval()
         self.name = item.getName()
