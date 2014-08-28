@@ -62,6 +62,7 @@ General operations for plugins are describe in this [article](http://premium-sup
 ![](src/main/resources/create_metric.png)
 
 5. Click on the _Save_ button to create the metric.
+
 6. Click on the _Close_ button to dismiss the dialog.
 
 #### Write a Script that Collects the Metric
@@ -73,8 +74,27 @@ This step is going to be short cut by providing an already created script the co
 1. Login into Boundary Premium
 2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
 
+3. Click on the _Relay_ to display the list of installed Relays.
+![](src/main/resources/installed_relays.png)
 
+4. Click on a relay in the list which then shows a list of the plugins installed on the Relay.
+![](src/main/resources/relay_plugin_list.png)
 
+5. Click on the _Add a plugin_ drop down menu and select _boundary\_plugin\_script_.
+![](src/main/resources/add_metric_dialog.png)
+
+6. Click on the _Add a Metric Command_ fill out the form as shown here:
+![](src/main/resources/add_metric_command_form.png)
+
+7. Click on the _Save_ button to save the configuration.
+![](src/main/resources/save_metric_command.png)
+
+7. The relay console is then displayed showing the plugin loading. Click on the _Close_ button to dismiss the dialog.
+![](src/main/resources/relay_console.png)
+
+#### Creating a Dashboard to Display the Metric
+
+See [Building a Dashboard - How To](http://premium-support.boundary.com/customer/portal/articles/1635547-building-a-dashboard---how-to) to create a dashboard to display the metric configured above.
 
 ## Plugin Shell Protocol
 
