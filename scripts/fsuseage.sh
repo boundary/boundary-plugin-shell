@@ -31,7 +31,7 @@ Main() {
     usage
     exit 1
   fi
-  typeset -r metric="FILE_SPACE_CAPACITY"
+  typeset -r metric="BOUNDARY_FILE_SPACE_CAPACITY"
   typeset -r mount_point=$1
   typeset -r source=$(hostname)
 

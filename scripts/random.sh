@@ -41,7 +41,7 @@ Main() {
    typeset -r RANGE=$(($2 - $1))
    typeset -r SOURCE=$(hostname)
    value=$(RandomNumber "$MIN" "$RANGE")
-   echo "RANDOM_NUMBER $value $SOURCE"
+   echo "BOUNDARY_RANDOM_NUMBER $value $SOURCE"
 }
 
 Main $*

@@ -41,13 +41,12 @@ class PortScan:
     sys.stdout.write("   port - Port to check status\n")
   
   def printMetric(self):
-    metricName = "PORT_AVAILABILITY"
     if self.result == 0:
       lresult = 1
     else:
       lresult = 0
-    print("PORT_AVAILABILITY {} {}".format(lresult, self.host))
-    print("PORT_RESPONSE {} {}".format(self.response, self.host))
+    print("BOUNDARY_PORT_AVAILABILITY {} {}".format(lresult, self.host))
+    print("BOUNDARY_PORT_RESPONSE {} {}".format(self.response, self.host))
 
   def setHost(self, host):
     self.host = host

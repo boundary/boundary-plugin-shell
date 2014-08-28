@@ -2,7 +2,11 @@
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
     "icon" : "icon.png",
     "command": "python index.py",
-    "metrics" : ["RANDOM_NUMBER","FILE_SPACE_CAPACITY","PROCESS_COUNT","PORT_AVAILABILITY","PORT_RESPONSE"],
+    "metrics" : ["BOUNDARY_RANDOM_NUMBER",
+                 "BOUNDARY_FILE_SPACE_CAPACITY",
+                 "BOUNDARY_PROCESS_COUNT",
+                 "BOUNDARY_PORT_AVAILABILITY",
+                 "BOUNDARY_PORT_RESPONSE"],
     "dashboards" : [
         { "name": "Plugin Shell", "layout": "d-w=3&d-h=2&d-pad=5&d-bg=none&d-g-PROCESS_COUNT=0-0-1-1&d-g-RANDOM_NUMBER=2-0-1-1&d-g-FILE_SPACE_CAPACITY=1-0-1-1"}
     ],
