@@ -9,4 +9,4 @@ fi
 typeset -r EMAIL=$1
 typeset -r API_TOKEN=$2
 
-curl -X PUT -u "$EMAIL:$API_TOKEN" "https://api.graphdat.com/v1/plugins/private/boundary_plugin_shell/boundary/boundary-plugin-shell"
+curl -X PUT -u "$EMAIL:$API_TOKEN" "https://premium-api.boundary.com/v1/plugins/private/boundary_plugin_shell/boundary/boundary-plugin-shell"
