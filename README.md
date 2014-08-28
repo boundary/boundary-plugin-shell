@@ -26,7 +26,6 @@ The Boundary Plugin Shell includes:
 ## Removing the Shell Plugin from Premium Boundary
 
 1. Login into Boundary Premium
-2.
 2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
 
 3. Click on the _Plugins_ in the settings dialog which lists the installed plugins: ![foo](src/main/resources/plugin_installed_settings.png)
@@ -39,7 +38,41 @@ The Boundary Plugin Shell includes:
 
 ## Configuration
 
-Once the Shell Plugin is installed a metric to be collected requires configuration. Configuration of a Shell Plugin collected metric requires that a _relay_ is installed. Instructions on how to install a relay for
+Once the Shell Plugin is installed a metric to be collected requires configuration. Configuration of a Shell Plugin to collect metrics requires that a _relay_ is installed. Instructions on how to install a relay for linux/unix can found [here](http://premium-documentation.boundary.com/relays), and for Windows [here](http://premium-support.boundary.com/customer/portal/articles/1656465-installing-relay-on-windows).
+
+General operations for plugins are describe in this [article](http://premium-support.boundary.com/customer/portal/articles/1635550-plugins---how-to)
+
+### Overview of the Steps to Create a Shell Plugin Metric
+
+1. Define the metric
+2. Write the script that collects the metric (see _Plugin Shell Protocol_)
+3. Configure the metric in the Plugin Shell
+
+### Configuring an Example Shell Plugin Metric
+
+#### Defining a Metric
+
+1. Login into Boundary Premium
+2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
+
+3. Click on _Metrics_ in the left hand side of the dialog which then displays the _Metrics_ dialog:
+![](src/main/resources/metrics_dialog.png)
+
+4. Click on the _Create Metric_ button which displays a form to define a new metric. Fill out the form as shown here:
+![](src/main/resources/create_metric.png)
+
+5. Click on the _Save_ button to create the metric.
+6. Click on the _Close_ button to dismiss the dialog.
+
+#### Write a Script that Collects the Metric
+
+This step is going to be short cut by providing an already created script the counts the number of files in a directory. The example script is called [nfiles](scripts/nfiles.sh)
+
+
+#### Configuring a Metric within the Shell Plugin
+1. Login into Boundary Premium
+2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
+
 
 
 
