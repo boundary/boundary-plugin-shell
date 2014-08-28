@@ -10,11 +10,13 @@ then
   exit 1
 fi
 
+directory_path=$1
+
 ### Collect the metric
 
 # List the directory, count the lines, and remove white space
-file_count=$(ls -1 $1 | wc -l | tr -d ' ')
+file_count=$(ls -1 $directory_path | wc -l | tr -d ' ')
 
-### Write the metric
+### Write the metric standard out
 
 echo "FILE_COUNT $file_count $(hostname)"
