@@ -35,7 +35,7 @@ The Boundary Plugin Shell includes:
 
 5. Click on the _Uninstall_ button which then displays a confirmation dialog along with the details on what metrics and dashboards will be removed.![foo](src/main/resources/plugin_uninstall.png)
 
-6. Click on the _Uninstall_ button to perfom the actual uninstall.
+6. Click on the _Uninstall_ button to perfom the actual uninstall and then click on the _Close_ button to dismiss the dialog.
 
 ## Configuration
 
