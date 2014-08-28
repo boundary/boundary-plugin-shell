@@ -124,7 +124,7 @@ echo $(uptime) $(hostname) | awk '{printf("LOAD_1_MINUTE %s %s\nLOAD_5_MINUTE %s
 ## Examples
 Boundary Shell Plugin bundles several examples that illustrate how to create your metrics using a program or script:
 
-- File System Usage
+- File Space Capacity
 - Process Count
 - Port Scan
 - Random
@@ -133,38 +133,70 @@ Boundary Shell Plugin bundles several examples that illustrate how to create you
 ### File Space Capacity
 
 Collects spaced used of a specified file system as a percentage
-#### Metrics
+
+Uses the following metrics:
+
 - `BOUNDARY_FILE_SPACE_CAPACITY`
 
-#### Requirements
+Requires the following on the Relay host:
+
 1. Bash shell
 2. Posix utilities: `awk`, `tail`
 3. python 2.6.6 or later
 
-#### Configuration
+Example Plugin Shell configuration:
+
+![](src/main/resources/file_usage.png)
 
 ### Process Count
 
-#### Requirements
+Measures the number of processes running on a host.
 
-#### Configuration
+Uses the following metrics:
 
+`BOUNDARY_PROCESS_COUNT`
+
+Requires the following on the Relay host:
+
+1. Bash shell
+2. Posix utilties
+
+Example Plugin Shell configuration:
+
+![](src/main/resources/process_count.png)
 
 ### Port Scan
 
 Checks the availability of TCP/IP _port_ on a specified _host_
 
-#### Requirements
+Uses the following metrics:
 
-#### Configuration
+- BOUNDARY_PORT_AVAILABILITY
+- BOUNDARY_PORT_RESPONSE
+
+Requires the following on the Relay host:
+
+- Python 2.6.6 or later
+
+Example Plugin Shell configuration:
+
+
+
 
 ### Random
 
-#### Configuration
+Example Plugin Shell configuration:
+
+![](src/main/resources/random_number.png)
 
 ### Windows Power Shell
 
-#### Configuration
+Uses the following metrics:
+
+`BOUNDARY_TBD`
+
+Example Plugin Shell configuration:
+
 
 
 
