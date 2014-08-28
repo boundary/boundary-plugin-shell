@@ -11,9 +11,17 @@ The Boundary Plugin Shell includes:
 
 ## Adding the Shell Plugin to Premium Boundary
 
-Installation Plugin
+1. Login into Boundary Premimum
+2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
+3. Click on the _Plugins_ in the settings dialog: ![](src/main/resources/settings_plugins_dialog.png)
 
+4. Local the _boundary-plugin-shell_ and click on the _Install_ button.
+![foo](src/main/resources/plugins_available.png)
+
+5. A confirmation dialog is displayed indicating the plugin was installed sucessfull along with the metrics and the dashboards that were configure:
 ![foo](src/main/resources/plugin_install.png)
+
+6. Click on the _OK_ button to dismiss the dialog.
 
 ## Removing the Shell Plugin from Premium Boundary
 
@@ -32,8 +40,24 @@ Collection of your own defined metric requires a program or script to:
 1. Collect, by any means the desired metric
 2. Write the collected metric value, along with the metric name, and source to [standard output](http://en.wikipedia.org/wiki/Standard_output) with an accompanying new line.
 
+Here Bash shell code snipet that illustrates
 
+```bash
+### Collect the metric
 
+# List the directory, count the lines, and remove white space
+file_count=$(ls -1 $directory_path | wc -l | tr -d ' ')
+
+### Write the metric standard out
+
+echo "FILE_COUNT $file_count $(hostname)"
+```
+
+Here is yet another snipet that gets the collects and outputs the processor load:
+
+```bash
+echo $(uptime) $(hostname) | awk '{printf("LOAD_1_MINUTE %s %s\nLOAD_5_MINUTE %s %s\nLOAD_15_MINUTE %s %s\n",$8,$11,$9,$11,$10,$11)}'
+```
 ## Examples
 Boundary Shell Plugin bundles several examples that illustrate how to create your metrics using a program or script:
 
