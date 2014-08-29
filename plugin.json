@@ -10,7 +10,7 @@
     "dashboards" : [
         { "name": "Plugin Shell", "layout": "d-w=3&d-h=2&d-pad=5&d-bg=none&d-g-BOUNDARY_PORT_AVAILABILITY=0-1-1-1&d-g-BOUNDARY_RANDOM_NUMBER=0-0-1-1&d-g-BOUNDARY_PROCESS_COUNT=1-0-1-1&d-g-BOUNDARY_FILE_SPACE_CAPACITY=2-0-1-1&d-g-BOUNDARY_PORT_RESPONSE=1-1-1-1"}
     ],
-    "postExtract" : "src/main/scripts/postinstall.py",
+    "postExtract" : "python src/main/scripts/postinstall.py",
     "paramArray": { "itemTitle": [ "name" ], "schemaTitle": "Metric Command" },
     "paramSchema": [
         {
