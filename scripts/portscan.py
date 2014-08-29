@@ -49,8 +49,8 @@ class PortScan:
       lresult = 1
     else:
       lresult = 0
-    print("BOUNDARY_PORT_AVAILABILITY {} {}".format(lresult, self.host))
-    print("BOUNDARY_PORT_RESPONSE {} {}".format(self.response, self.host))
+    print("BOUNDARY_PORT_AVAILABILITY {0} {1}".format(lresult, self.host))
+    print("BOUNDARY_PORT_RESPONSE {0} {1}".format(self.response, self.host))
 
   def setHost(self, host):
     self.host = host
