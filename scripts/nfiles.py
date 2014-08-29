@@ -51,7 +51,7 @@ class FileCount:
 
   ### Write the metric standard out
   def printMetric(self):
-    sys.stdout.write("BOUNDARY_FILE_COUNT {0} {1}".format(self.nfiles,socket.gethostname()))
+    sys.stdout.write("BOUNDARY_FILE_COUNT {0} {1}\n".format(self.nfiles,socket.gethostname()))
 
   def execute(self):
     self.checkArgs(sys.argv)
