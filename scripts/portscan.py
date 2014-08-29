@@ -32,6 +32,10 @@ class PortScan:
       sys.exit(1)
     self.setHost(sys.argv[1])
     self.setPort(int(sys.argv[2]))
+    
+  def total_seconds(self,td):
+    return (float(td.microseconds) + (float(td.seconds) + float(td.days) * 24 * 3600) * 10**6) / 10**6
+
   
   def usage():
     sys.stdout.write("usage: {} <hostname> <port>\n".format(sys.argv[0]))
@@ -79,7 +83,7 @@ class PortScan:
 
     # Calculates the difference of time, to see how long it took to run the script
     t = t2 - t1
-    self.response = t.total_seconds() * 1000
+    self.response = self.total_seconds(t) * 1000
 
 if __name__ == "__main__":
   p = PortScan()
