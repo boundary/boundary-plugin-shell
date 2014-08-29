@@ -27,7 +27,7 @@ class PortScan:
         self.response = None
         
   def checkArgs(self, args):
-    if len(sys.argv) != 3:
+    if len(args) != 3:
       self.usage()
       sys.exit(1)
     self.setHost(sys.argv[1])
@@ -37,12 +37,12 @@ class PortScan:
     return (float(td.microseconds) + (float(td.seconds) + float(td.days) * 24 * 3600) * 10**6) / 10**6
 
   
-  def usage():
-    sys.stdout.write("usage: {} <hostname> <port>\n".format(sys.argv[0]))
-    sys.stdout.write("\n")
-    sys.stdout.write("where:\n")
-    sys.stdout.write("   hostname - Host to check status of port\n")
-    sys.stdout.write("   port - Port to check status\n")
+  def usage(self):
+    sys.stderr.write("usage: {} <hostname> <port>\n".format(sys.argv[0]))
+    sys.stderr.write("\n")
+    sys.stderr.write("where:\n")
+    sys.stderr.write("   hostname - Host to check status of port\n")
+    sys.stderr.write("   port - Port to check status\n")
   
   def printMetric(self):
     if self.result == 0:
