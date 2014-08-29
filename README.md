@@ -96,6 +96,10 @@ This step is going to be short cut by providing an already created script the co
 
 See [Building a Dashboard - How To](http://premium-support.boundary.com/customer/portal/articles/1635547-building-a-dashboard---how-to) to create a dashboard to display the metric configured above.
 
+#### Enabling Debug
+
+To aide in the development of your custom metric script you can enable debug, by checking the _Debug_ checkbox in the Metric Command definition form. This enables logging of the the command executed and the output that is produced.
+
 ## Plugin Shell Protocol
 
 Collection of your own defined metric requires a program or script to:
