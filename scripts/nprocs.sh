@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-process_count=$(ps -e | wc -l | tr -d ' ')
+process_count=$(ps -e | egrep '^.*\d+' | grep -v nprocs.sh | wc -l | tr -d ' ')
 
 echo "BOUNDARY_PROCESS_COUNT $process_count $(hostname)"
