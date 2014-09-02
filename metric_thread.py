@@ -37,6 +37,6 @@ class MetricThread(Thread):
         while True:
             output = self.proc.execute()
             with self.mutex:
-                stdout.write(output)
+                stdout.write(output.decode('utf-8'))
                 stdout.flush()
             time.sleep(self.pollingInterval)
