@@ -9,6 +9,8 @@ The Boundary Plugin Shell includes:
 2. Sample Dashboard _Plugin Shell_
 3. Example scripts that collect metrics
 
+The Boundary Shell requires that you have python 2.6.6 or later installed on the target system.
+
 ## Adding the Shell Plugin to Premium Boundary
 
 1. Login into Boundary Premium
@@ -128,15 +130,45 @@ echo $(uptime) $(hostname) | awk '{printf("LOAD_1_MINUTE %s %s\nLOAD_5_MINUTE %s
 ## Examples
 Boundary Shell Plugin bundles several examples that illustrate how to create your metrics using a program or script:
 
+- CPU Load
 - File Space Capacity
 - Process Count
 - Port Scan
 - Random
 - Windows Power Shell
 
+### CPU Load
+
+Collects the CPU load for the last 1,5,and 15 minute intervals.
+
+Uses the following metrics:
+
+- `BOUNDARY_CPU_LOAD_1_MINUTE`
+- `BOUNDARY_CPU_LOAD_5_MINUTE`
+- `BOUNDARY_CPU_LOAD_15_MINUTE`
+
+Requires the following on the Relay host:
+
+1. Bash shell
+2. Posix utilities: `awk`, `hostname`, `uptime`
+
+Example Command:
+
+```bash
+$ scripts/cpu-load.sh
+```
+
+Example Plugin Shell configuration:
+
+![](src/main/resources/cpu_plugin_config.png)
+
 ### File Space Capacity
 
-Collects spaced used of a specified file system as a percentage
+Collects spaced used of a file system as a percentage of total space.
+
+```bash
+useage: fsuseage.sh <mount point>
+```
 
 Uses the following metrics:
 
@@ -148,6 +180,12 @@ Requires the following on the Relay host:
 2. Posix utilities: `awk`, `tail`
 3. python 2.6.6 or later
 
+Example Command:
+
+```bash
+$ scripts/fsuseage.sh /
+```
+
 Example Plugin Shell configuration:
 
 ![](src/main/resources/file_usage.png)
@@ -158,16 +196,23 @@ Measures the number of processes running on a host.
 
 Uses the following metrics:
 
-`BOUNDARY_PROCESS_COUNT`
+- `BOUNDARY_PROCESS_COUNT`
 
 Requires the following on the Relay host:
 
 1. Bash shell
-2. Posix utilties
+2. Posix utilties: `egrep`,`grep`,`hostname`,`ps`,`tr`,`wc`
+
+Example Command:
+
+```bash
+$ scripts/nprocs.sh
+```
 
 Example Plugin Shell configuration:
 
 ![](src/main/resources/process_count.png)
+
 
 ### Port Scan
 
@@ -175,19 +220,52 @@ Checks the availability of TCP/IP _port_ on a specified _host_
 
 Uses the following metrics:
 
-- BOUNDARY_PORT_AVAILABILITY
-- BOUNDARY_PORT_RESPONSE
+- `BOUNDARY_PORT_AVAILABILITY`
+- `BOUNDARY_PORT_RESPONSE`
 
 Requires the following on the Relay host:
 
 - Python 2.6.6 or later
 
+Example Command:
+
+```
+$ scripts/portscan.py www.google.com 80
+```
+
 Example Plugin Shell configuration:
 
 
 
+![](src/main/resources/port_scan.png)
+
+
 
 ### Random
+
+Example scripts that outputs a random number between the values input to the script:
+```bash
+usage: random.sh <min> <max>
+
+where:
+  min is the smallest value to generate
+  max is the largest value to generate
+```
+
+Uses the following metrics:
+
+- `BOUNDARY_RANDOM_NUMBER`
+
+
+Requires the following on the Relay host:
+
+- Bash shell
+
+Example Command:
+
+```
+$ scripts/random.sh 0 99
+```
 
 Example Plugin Shell configuration:
 
