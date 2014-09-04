@@ -1,0 +1,6 @@
+REGEDIT4
+
+[
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
+]
+"ExecutionPolicy"="REG_SZ:RemoteSigned"
