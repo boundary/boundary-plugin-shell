@@ -6,7 +6,7 @@
 	<groupId>com.boundary</groupId>
 	<artifactId>boundary-plugin-shell</artifactId>
 	<packaging>jar</packaging>
-	<version>00.01.00</version>
+	<version>00.04.00</version>
 
 	<name>boundary_plugin_shell</name>
 	<description>Boundary Plugin Shell allows the generation of metrics from a command or script</description>
