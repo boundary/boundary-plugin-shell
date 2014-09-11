@@ -1,15 +1,14 @@
-Boundary Plugin Shell
+Boundary Shell Plugin
 =====================
 
-Boundary Plugin Shell is generic plugin that allows the use of any program or scripting language to produce metrics for the Boundary Premium product.
+Boundary Shell plugin is generic plugin that allows the use of any program or scripting language to produce metrics for the Boundary Premium product.
 
-The Boundary Plugin Shell includes:
+Additionally the Shell plugin includes:
 
-1. Boundary Plugin Shell
-2. Sample Dashboard _Plugin Shell_
-3. Example scripts that collect metrics
+1. Example scripts that collect metrics
+2. Example dashboards that display metrics
 
-The Boundary Shell requires that you have python 2.6.6 or later installed on the target system.
+The Shell plugin requires that you have python 2.6.6 or later installed on the target system.
 
 ## Adding the Shell Plugin to Premium Boundary
 
@@ -17,7 +16,7 @@ The Boundary Shell requires that you have python 2.6.6 or later installed on the
 2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
 3. Click on the _Plugins_ in the settings dialog: ![](src/main/resources/settings_plugins_dialog.png)
 
-4. Local the _boundary\_plugin\_shell_ and click on the _Install_ button.
+4. Locate the _shell_ and click on the _Install_ button.
 ![foo](src/main/resources/plugins_available.png)
 
 5. A confirmation dialog is displayed indicating the plugin was installed sucessfull along with the metrics and the dashboards that were configure:
@@ -31,7 +30,7 @@ The Boundary Shell requires that you have python 2.6.6 or later installed on the
 2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
 
 3. Click on the _Plugins_ in the settings dialog which lists the installed plugins: ![foo](src/main/resources/plugin_installed_settings.png)
-4. Locate the _boundary\_plugin\_shell_ and click on the item, which then displays the uninstall dialog:
+4. Locate the _shell_ plugin and click on the item, which then displays the uninstall dialog:
 ![foo](src/main/resources/plugin_details_uninstall.png)
 
 5. Click on the _Uninstall_ button which then displays a confirmation dialog along with the details on what metrics and dashboards will be removed.![foo](src/main/resources/plugin_uninstall.png)
@@ -47,8 +46,8 @@ General operations for plugins are describe in this [article](http://premium-sup
 ### Overview of the Steps to Create a Shell Plugin Metric
 
 1. Define the metric
-2. Write the script that collects the metric (see _Plugin Shell Protocol_)
-3. Configure the metric in the Plugin Shell
+2. Write the script that collects the metric (see _Shell Plugin Protocol_)
+3. Configure the metric in the Shell plugin.
 
 ### Configuring an Example Shell Plugin Metric
 
@@ -102,7 +101,7 @@ See [Building a Dashboard - How To](http://premium-support.boundary.com/customer
 
 To aide in the development of your custom metric script you can enable debug, by checking the _Debug_ checkbox in the Metric Command definition form. This enables logging of the the command executed and the output that is produced.
 
-## Plugin Shell Protocol
+## Shell Plugin Protocol
 
 Collection of your own defined metric requires a program or script to:
 
