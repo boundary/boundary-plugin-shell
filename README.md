@@ -90,7 +90,7 @@ This step is going to be short cut by providing an already created script the co
 7. Click on the _Save_ button to save the configuration.
 ![](src/main/resources/save_metric_command.png)
 
-7. The relay console is then displayed showing the plugin loading. Click on the _Close_ button to dismiss the dialog.
+8. The relay console is then displayed showing the plugin loading. Click on the _Close_ button to dismiss the dialog.
 ![](src/main/resources/relay_console.png)
 
 #### Creating a Dashboard to Display the Metric
