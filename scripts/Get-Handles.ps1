@@ -12,9 +12,8 @@ Gets the total number of handles
 
 .EXAMPLE
 
-PS > Get-DiskUsage -IncludeSubdirectories
-Gets the disk usage for the current directory and those below it,
-adding the size of child directories to the directory that contains them.
+PS > Get-Handles 
+Gets the number of handles allocated by all the processes running on the host.
 
 #>
 
