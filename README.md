@@ -19,7 +19,7 @@ The Shell plugin requires that you have python 2.6.6 or later installed on the t
 4. Locate the _shell_ and click on the _Install_ button.
 ![foo](src/main/resources/plugins_available.png)
 
-5. A confirmation dialog is displayed indicating the plugin was installed sucessfull along with the metrics and the dashboards that were configure:
+5. A confirmation dialog is displayed indicating the plugin was installed sucessfully, along with the metrics and the dashboards:
 ![foo](src/main/resources/plugin_install.png)
 
 6. Click on the _OK_ button to dismiss the dialog.
@@ -84,7 +84,7 @@ This step is going to be short cut by providing an already created script the co
 5. Click on the _Add a plugin_ drop down menu and select _shell_.
 ![](src/main/resources/add_metric_dialog.png)
 
-6. Click on the _Add a Metric Command_ fill out the form as shown here:
+6. Click on the _Add a Metric Command_ fill out the form as shown here and the click on _OK_:
 ![](src/main/resources/add_metric_command_form.png)
 
 7. Click on the _Save_ button to save the configuration.
@@ -99,7 +99,7 @@ See [Building a Dashboard - How To](http://premium-support.boundary.com/customer
 
 #### Enabling Debug
 
-To aide in the development of your custom metric script you can enable debug, by checking the _Debug_ checkbox in the Metric Command definition form. This enables logging of the the command executed and the output that is produced.
+To aide in the development of your custom metric script you can enable debug, by checking the _Debug_ checkbox in the Metric Command definition form. This enables logging of the the command executed and the output that is produced by the command.
 
 ## Shell Plugin Protocol
 
@@ -108,7 +108,7 @@ Collection of your own defined metric requires a program or script to:
 1. Collect, by any means the desired metric
 2. Write the collected metric value, along with the metric name, and source to [standard output](http://en.wikipedia.org/wiki/Standard_output) with an accompanying new line.
 
-Here Bash shell code snipet that illustrates
+Here Bash shell code snipet that illustrates:
 
 ```bash
 ### Collect the metric
