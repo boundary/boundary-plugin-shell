@@ -33,13 +33,13 @@ The Shell plugin requires that you have python 2.6.6 or later installed on the t
 4. Locate the _shell_ plugin and click on the item, which then displays the uninstall dialog:
 ![foo](src/main/resources/plugin_details_uninstall.png)
 
-5. Click on the _Uninstall_ button which then displays a confirmation dialog along with the details on what metrics and dashboards will be removed.![foo](src/main/resources/plugin_uninstall.png)
+5. Click on the _Uninstall_ button which displays a confirmation dialog along with the details on what metrics and dashboards will be removed.![foo](src/main/resources/plugin_uninstall.png)
 
 6. Click on the _Uninstall_ button to perfom the actual uninstall and then click on the _Close_ button to dismiss the dialog.
 
 ## Configuration
 
-Once the Shell Plugin is installed a metric to be collected requires configuration. Configuration of a Shell Plugin to collect metrics requires that a _relay_ is installed. Instructions on how to install a relay for linux/unix can found [here](http://premium-documentation.boundary.com/relays), and for Windows [here](http://premium-support.boundary.com/customer/portal/articles/1656465-installing-relay-on-windows).
+Once the Shell Plugin is installed a metric to be collected requires configuration. Any metric collection requires that a _relay_ is installed on the target system. Instructions on how to install a relay for linux/unix can found [here](http://premium-documentation.boundary.com/relays), and for Windows [here](http://premium-support.boundary.com/customer/portal/articles/1656465-installing-relay-on-windows).
 
 General operations for plugins are describe in this [article](http://premium-support.boundary.com/customer/portal/articles/1635550-plugins---how-to)
 
@@ -81,7 +81,7 @@ This step is going to be short cut by providing an already created script the co
 4. Click on a relay in the list which then shows a list of the plugins installed on the Relay.
 ![](src/main/resources/relay_plugin_list.png)
 
-5. Click on the _Add a plugin_ drop down menu and select _boundary\_plugin\_script_.
+5. Click on the _Add a plugin_ drop down menu and select _shell_.
 ![](src/main/resources/add_metric_dialog.png)
 
 6. Click on the _Add a Metric Command_ fill out the form as shown here:
