@@ -270,13 +270,6 @@ Example Plugin Shell configuration:
 
 ![](src/main/resources/random_number.png)
 
-### Windows Power Shell
-
-Uses the following metrics:
-
-`BOUNDARY_TBD`
-
-Example Plugin Shell configuration:
 
 
 
