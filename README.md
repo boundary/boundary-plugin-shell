@@ -108,7 +108,7 @@ Collection of your own defined metric requires a program or script to:
 1. Collect, by any means the desired metric
 2. Write the collected metric value, along with the metric name, and source to [standard output](http://en.wikipedia.org/wiki/Standard_output) with an accompanying new line.
 
-Here Bash shell code snipet that illustrates:
+Here is a Bash shell code snipet that illustrates:
 
 ```bash
 ### Collect the metric
@@ -121,7 +121,7 @@ file_count=$(ls -1 $directory_path | wc -l | tr -d ' ')
 echo "FILE_COUNT $file_count $(hostname)"
 ```
 
-Here is yet another snipet that gets the collects and outputs the processor load in a single line of code:
+Here is yet another snipet that collects and outputs the processor load in a single line of code:
 
 ```bash
 echo $(uptime) $(hostname) | awk '{printf("LOAD_1_MINUTE %s %s\nLOAD_5_MINUTE %s %s\nLOAD_15_MINUTE %s %s\n",$8,$11,$9,$11,$10,$11)}'
