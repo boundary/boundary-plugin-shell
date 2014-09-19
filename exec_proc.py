@@ -16,6 +16,7 @@
 from subprocess import Popen,PIPE
 import shlex
 import logging
+from string import replace
 
 class ExecProc:
     
@@ -41,7 +42,7 @@ class ExecProc:
         p = Popen(args,stdout=PIPE)
         o,e = p.communicate()
         logging.info("before: " + ':'.join(x.encode('hex') for x in o))
-        o = o.strip('\r')
+        o = replace(o,"\r","")
         logging.info("after: " + ':'.join(x.encode('hex') for x in o))
         if self.debug == True:
             logging.info("output=\"%s\"",o)
