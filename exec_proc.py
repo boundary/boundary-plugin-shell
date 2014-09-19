@@ -35,12 +35,12 @@ class ExecProc:
         if self.command == None:
             raise ValueError
         # Remove Carriage Returns
-        command = self.command.strip('\r')
-        args = shlex.split(command)
+        args = shlex.split(self.command)
         if self.debug == True:
             logging.info("command=\"%s\"",args)
         p = Popen(args,stdout=PIPE)
         o,e = p.communicate()
+        o = o.strip('\r')
         if self.debug == True:
             logging.info("output=\"%s\"",o)
             logging.info(':'.join(x.encode('hex') for x in o))
