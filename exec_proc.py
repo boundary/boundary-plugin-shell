@@ -40,9 +40,9 @@ class ExecProc:
             logging.info("command=\"%s\"",args)
         p = Popen(args,stdout=PIPE)
         o,e = p.communicate()
-        logging.info("before=\"%s\"",o)
+        logging.info("before: " + ':'.join(x.encode('hex') for x in o))
         o = o.strip('\r')
-        logging.info("after=\"%s\"",o)
+        logging.info("after: " + ':'.join(x.encode('hex') for x in o))
         if self.debug == True:
             logging.info("output=\"%s\"",o)
             logging.info(':'.join(x.encode('hex') for x in o))
