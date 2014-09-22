@@ -35,15 +35,17 @@ class ExecProc:
     def execute(self):
         if self.command == None:
             raise ValueError
-        # Remove Carriage Returns
         args = shlex.split(self.command)
         if self.debug == True:
             logging.info("command=\"%s\"",args)
         p = Popen(args,stdout=PIPE)
         o,e = p.communicate()
-        logging.info("before: " + ':'.join(x.encode('hex') for x in o))
-        o = replace(o,"\r","")
-        logging.info("after: " + ':'.join(x.encode('hex') for x in o))
+        if self.debug == True:
+            logging.info("before: " + ':'.join(x.encode('hex') for x in o))
+        # Remove carriage returns from output
+        #o = replace(o,"\r","")
+        if self.debug == True:
+            logging.info("after: " + ':'.join(x.encode('hex') for x in o))
         if self.debug == True:
             logging.info("output=\"%s\"",o)
             logging.info(':'.join(x.encode('hex') for x in o))
