@@ -2,12 +2,12 @@
         "name": "boundary-plugin-shell",
         "version": "0.1.0",
         "private": false,
-        "description": "Boundary nagios plugin for premimum that uses a command or script to generate metrics",
-        "main": "index.js",
+        "description": "Boundary plugin for premimum that uses a command or script to generate metrics",
+        "main": "index.py",
         "devDependencies": {},
         "repository": {
         "type": "git",
-        "url": "https://github.com/jdgwartney/boundary-plugin-shell"
+        "url": "https://github.com/boundary/boundary-plugin-shell"
         },
         "keywords": [
                 "boundary",
@@ -17,8 +17,8 @@
         "author": "<support@boundary.com>",
         "license": "Apache v2",
         "bugs": {
-                "url": "https://github.com/jdgwartney/boundary-plugin-shell/issues"
+                "url": "https://github.com/boundary/boundary-plugin-shell/issues"
         },
-        "engine": "node >= 0.8.1"
+        "engine": "python >= 2.6.6"
 }
 
