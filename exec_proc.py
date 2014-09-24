@@ -43,7 +43,7 @@ class ExecProc:
         if self.debug == True:
             logging.info("before: " + ':'.join(x.encode('hex') for x in o))
         # Remove carriage returns from output
-        #o = replace(o,"\r","")
+        o = replace(o,"\r","")
         if self.debug == True:
             logging.info("after: " + ':'.join(x.encode('hex') for x in o))
         if self.debug == True:
