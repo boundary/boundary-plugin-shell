@@ -93,21 +93,11 @@
         {
             "defaultAggregate": "AVG",
             "defaultResolutionMS": null,
-            "description": "Current stock price or the end of day's trading.",
-            "displayName": "Stock Price",
-            "displayNameShort": "Stock Price",
+            "description": "Count of windows handles on a windows system",
+            "displayName": "Windows Handles",
+            "displayNameShort": "Windows Handles",
             "isDisabled": 0,
-            "name": "BOUNDARY_STOCK_PRICE",
-            "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": null,
-            "description": "Current stock volume or the end of day's trading.",
-            "displayName": "Stock Volume",
-            "displayNameShort": "Stock Volume",
-            "isDisabled": 0,
-            "name": "BOUNDARY_STOCK_VOLUME",
+            "name": "BOUNDARY_WINDOWS_HANDLES",
             "unit": "number"
         }
     ]
