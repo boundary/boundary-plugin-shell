@@ -13,7 +13,7 @@ Shell plugin is generic plugin that allows the use of any program or scripting l
 
 |  Runtime | node.js | Python | Java |
 |:---------|:-------:|:------:|:----:|
-| Required |    +    |        |      |
+| Required |         |    -   |      |
 
 - [How to install node.js?](https://help.boundary.com/hc/articles/202360701)
 - Once the Shell Plugin is installed, any metric to be collected requires additional configuration. 
