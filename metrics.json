@@ -89,16 +89,6 @@
             "isDisabled": 0,
             "name": "BOUNDARY_RANDOM_NUMBER",
             "unit": "number"
-        },
-        {
-            "defaultAggregate": "AVG",
-            "defaultResolutionMS": null,
-            "description": "Count of windows handles on a windows system",
-            "displayName": "Windows Handles",
-            "displayNameShort": "Windows Handles",
-            "isDisabled": 0,
-            "name": "BOUNDARY_WINDOWS_HANDLES",
-            "unit": "number"
         }
     ]
 }
