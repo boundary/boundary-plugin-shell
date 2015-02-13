@@ -1,24 +1,27 @@
 Boundary Shell Plugin
 =====================
 
+THIS IS UNOFFICIAL PLUGIN. DO NOT INSTALL UNLESS APPROVED BY BOUNDARY SUPPORT.
 Shell plugin is generic plugin that allows the use of any program or scripting language to produce metrics for the Boundary product.
 
-### Platforms
-- Linux
-- OS X
-- SmartOS
-
 ### Prerequisites
-- Python 2.6.6 or later
+
+|     OS    | Linux | Windows | SmartOS | OS X |
+|:----------|:-----:|:-------:|:-------:|:----:|
+| Supported |   v   |    -    |    v    |  v   |
+
+
+|  Runtime | node.js | Python | Java |
+|:---------|:-------:|:------:|:----:|
+| Required |         |    -   |      |
+
+- [How to install Python?](https://help.boundary.com/hc/articles/202270132)
+
+- Once the Shell Plugin is installed, any metric to be collected requires additional configuration. 
 
 ### Plugin Setup
 
-Once the Shell Plugin is installed a metric to be collected requires configuration. Any metric collection requires that a _relay_ is installed on the target system. Instructions on how to install a relay for linux/unix can found [here](http://premium-documentation.boundary.com/relays), and for Windows [here](http://premium-support.boundary.com/customer/portal/articles/1656465-installing-relay-on-windows).
-
-General operations for plugins are describe in this [article](http://premium-support.boundary.com/customer/portal/articles/1635550-plugins---how-to)
-
-#### Overview of the Steps to Create a Shell Plugin Metric
-
+How to add new metrics?
 1. Define the metric
 2. Write the script that collects the metric (see _Shell Plugin Protocol_)
 3. Configure the metric in the Shell plugin.
@@ -208,12 +211,13 @@ $ scripts/portscan.py www.google.com 80
 
 Example Plugin Shell configuration:
 
-
-
 ![](src/main/resources/port_scan.png)
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 95b35d0b4422aba61a5b5a3e717fd0fdea5d75d1
 #### Random
 
 Example scripts that outputs a random number between the values input to the script:
@@ -229,7 +233,6 @@ Uses the following metrics:
 
 - `BOUNDARY_RANDOM_NUMBER`
 
-
 Requires the following on the Relay host:
 
 - Bash shell
@@ -243,8 +246,3 @@ $ scripts/random.sh 0 99
 Example Plugin Shell configuration:
 
 ![](src/main/resources/random_number.png)
-
-
-
-
-
