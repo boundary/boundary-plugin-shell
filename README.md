@@ -30,18 +30,7 @@ How to add new metrics?
 
 ##### Defining a Metric
 
-1. Login into Boundary Premium
-2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
-
-3. Click on _Metrics_ in the left hand side of the dialog which then displays the _Metrics_ dialog:
-![](src/main/resources/metrics_dialog.png)
-
-4. Click on the _Create Metric_ button which displays a form to define a new metric. Fill out the form as shown here:
-![](src/main/resources/create_metric.png)
-
-5. Click on the _Save_ button to create the metric.
-
-6. Click on the _Close_ button to dismiss the dialog.
+See this [article](https://help.boundary.com/hc/en-us/articles/201598362-Custom-Metrics-How-To) on how to define custom metrics.
 
 ##### Write a Script that Collects the Metric
 
@@ -50,25 +39,12 @@ This step is going to be short cut by providing an already created script the co
 
 ##### Configuring a Metric within the Shell Plugin
 1. Login into Boundary Premium
-2. Display the settings dialog by clicking on the _settings icon_: ![](src/main/resources/settings_icon.png)
-
-3. Click on the _Relay_ to display the list of installed Relays.
-![](src/main/resources/installed_relays.png)
-
-4. Click on a relay in the list which then shows a list of the plugins installed on the Relay.
-![](src/main/resources/relay_plugin_list.png)
-
-5. Click on the _Add a plugin_ drop down menu and select _shell_.
-![](src/main/resources/add_metric_dialog.png)
-
-6. Click on the _Add a Metric Command_ fill out the form as shown here and the click on _OK_:
-![](src/main/resources/add_metric_command_form.png)
-
-7. Click on the _Save_ button to save the configuration.
-![](src/main/resources/save_metric_command.png)
-
-8. The relay console is then displayed showing the plugin loading. Click on the _Close_ button to dismiss the dialog.
-![](src/main/resources/relay_console.png)
+2. Display the settings dialog by clicking on the settings icon and selecting _meters_ to display the list of installed meters.
+3. Click on a meter in the list which then shows a list of the plugins installed on the meter.
+4. Click on the _Add a plugin_ drop down menu and select _shell_.
+5. Click on the _Add a Metric Command_ fill out the form as shown here and the click on _OK_:
+6. Click on the _Save_ button to save the configuration.
+8. The meter console is then displayed showing the plugin loading. Click on the _Close_ button to dismiss the dialog.
 
 ##### Creating a Dashboard to Display the Metric
 
@@ -111,7 +87,6 @@ Boundary Shell Plugin bundles several examples that illustrate how to create you
 - Process Count
 - Port Scan
 - Random
-- Windows Power Shell
 
 #### CPU Load
 
@@ -136,7 +111,10 @@ $ scripts/cpu-load.sh
 
 Example Plugin Shell configuration:
 
-![](src/main/resources/cpu_plugin_config.png)
+- Name - `CPU Load`
+- Poll Time (sec) - `5`
+- Debug - `false` (unchecked)
+- Command - `scripts\cpu-load.sh`
 
 #### File Space Capacity
 
@@ -164,7 +142,10 @@ $ scripts/fsuseage.sh /
 
 Example Plugin Shell configuration:
 
-![](src/main/resources/file_usage.png)
+- Name - `Root File Space`
+- Poll Time (sec) - `5`
+- Debug - `false` (unchecked)
+- Command - `scripts\fsusage.sh /`
 
 #### Process Count
 
@@ -187,8 +168,10 @@ $ scripts/nprocs.sh
 
 Example Plugin Shell configuration:
 
-![](src/main/resources/process_count.png)
-
+- Name - `Process Count`
+- Poll Time (sec) - `5`
+- Debug - `false` (unchecked)
+- Command - `scripts\nprocs.sh`
 
 #### Port Scan
 
@@ -211,13 +194,11 @@ $ scripts/portscan.py www.google.com 80
 
 Example Plugin Shell configuration:
 
-![](src/main/resources/port_scan.png)
+- Name - `Google Port 80`
+- Poll Time (sec) - `5`
+- Debug - `false` (unchecked)
+- Command - `scripts/portscan.py www.google.com 80`
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 95b35d0b4422aba61a5b5a3e717fd0fdea5d75d1
 #### Random
 
 Example scripts that outputs a random number between the values input to the script:
@@ -245,4 +226,8 @@ $ scripts/random.sh 0 99
 
 Example Plugin Shell configuration:
 
-![](src/main/resources/random_number.png)
+- Name - `Random`
+- Poll Time (sec) - `5`
+- Debug - `false` (unchecked)
+- Command - `scripts/random 0 99`
+
