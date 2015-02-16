@@ -22,6 +22,7 @@ Shell plugin is generic plugin that allows the use of any program or scripting l
 ### Plugin Setup
 
 How to add new metrics?
+
 1. Define the metric
 2. Write the script that collects the metric (see _Shell Plugin Protocol_)
 3. Configure the metric in the Shell plugin.
