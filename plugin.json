@@ -1,6 +1,7 @@
 {
     "description": "Provides a generic means to generate metrics via a command, or other scripting language",
     "command": "python index.py",
+    "icon": "icon.png",
     "metrics" : [
                  "BOUNDARY_CPU_LOAD_1_MINUTE",
                  "BOUNDARY_CPU_LOAD_5_MINUTE",
